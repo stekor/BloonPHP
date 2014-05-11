@@ -30,6 +30,7 @@ Class Util{
 		self::ExtensionLoaded("pthreads");
 		self::ExtensionLoaded("sockets");
 		self::ExtensionLoaded("pdo_mysql");
+		self::ExtensionLoaded("gmp");
 		return true;
 	}
 	private function ExtensionLoaded($ext){
@@ -80,7 +81,7 @@ Class Util{
 	}
 	public function EventTasks($bool=true){
 		if($bool){
-			Console::SetTitle('BloonCrypto - Users online : '.Network::UsersOnline().' - Rooms loaded : '.RoomManager::RoomsLoaded().' - Memory : '.self::get_php_memory());
+			Console::SetTitle('BloonPHP - Users online : '.Network::UsersOnline().' - Rooms loaded : '.RoomManager::RoomsLoaded().' - Memory : '.self::get_php_memory());
 		}
 		Pooling::ManagePool();
 	}
